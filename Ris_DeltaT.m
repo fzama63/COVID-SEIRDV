@@ -3,7 +3,7 @@
 %  Method='levenberg-marquardt';
 %  Method='trust-region-reflective';
 %
-Acquisizione_dati;
+
 date=datetime(datestr(xlsread('DATE_prev.xlsx','A1:A749')))+datenum('30-Dec-1899'); 
 
 
