@@ -92,7 +92,7 @@ plot(date_all(T_tot),Lin_R./1000000,'--g','LineWidth',1.5); hold on
 plot(date_all(T_tot),Exp_R./1000000,'-.k','LineWidth',1.5); hold on
 y_labels = get(gca, 'YTick'); y_labels = y_labels(2:3:end);
 set(gca,'FontSize',17,'fontweight','bold','YTick', y_labels,'YTicklabels',y_labels,'Xtick',labelsx); grid on; xtickangle(0);
-ytickformat('%g million')
+ytickformat('%g M')
 %%
 figure
 plot(date_all(T_tot),D(T_tot),'.','MarkerSize',18,'Color',[1.00,0.00,0.00],'LineWidth',2); hold on;
@@ -107,9 +107,9 @@ figure
 plot(date_all(T_tot),V(T_tot)./1000000,'.','Color',[0.30,0.75,0.93],'MarkerSize',18,'LineWidth',0.8); hold on;
 plot(date_all(T_tot),Lin_V./1000000,'--g','LineWidth',2.5); hold on
 plot(date_all(T_tot),Exp_V./1000000,'-.k','LineWidth',1.5); hold on
-y_labels = get(gca, 'YTick'); y_labels = y_labels(2:3:end);
+y_labels = get(gca, 'YTick'); y_labels = y_labels(2:2:end);
 set(gca,'FontSize',17,'fontweight','bold','YTick', y_labels,'YTicklabels',y_labels,'Xtick',labelsx); grid on; xtickangle(0);
-ytickformat('%g million')
+ytickformat('%g M')
 %% 
 % Grafici differenze
 % figure;
