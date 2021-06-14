@@ -3,8 +3,8 @@ warning off
 %----------------------
 % Acquisizione dati per compartimento V
 
-database_vaccini=websave('updated_data_vaccini.csv','https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv');
-Tab_vaccini=readtable('updated_data_vaccini.csv','Delimiter',',');
+%database_vaccini=websave('updated_data_vaccini.csv','https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv');
+Tab_vaccini=readtable('updated_data_vaccini_arti.csv','Delimiter',',');
 Tab_vaccini=sortrows(Tab_vaccini,'data_somministrazione');
 date=datetime(Tab_vaccini{:,{'data_somministrazione'}});
 
@@ -24,8 +24,8 @@ clear date prima_dose k i
 % ----------------------
 % Acquisizione dati per compartimenti I,R,D
 
-database_covid=websave('updated_data.csv','https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv');
-Tab = readtable('updated_data.csv','Delimiter', ',');
+%database_covid=websave('updated_data.csv','https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv');
+Tab = readtable('updated_data_arti.csv','Delimiter', ',');
 N = 60360000;
 Tab=Tab(308:end,:);
 date_all = (split(string(Tab{:,1}),'T')); 

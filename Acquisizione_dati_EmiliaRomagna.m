@@ -3,8 +3,8 @@ warning off
 %----------------------
 % Acquisizione dati per compartimento V
 
-database_vaccini=websave('updated_data_vaccini.csv','https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv');
-Tab_vaccini=readtable('updated_data_vaccini.csv','Delimiter',',');
+%database_vaccini=websave('updated_data_vaccini.csv','https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv');
+Tab_vaccini=readtable('updated_data_vaccini_arti.csv','Delimiter',',');
 Tab_vaccini=sortrows(Tab_vaccini,'data_somministrazione');
 date=datetime(Tab_vaccini{:,{'data_somministrazione'}});
 k=1;
@@ -25,8 +25,8 @@ V=[V(1); V(1); V(1); V(1); V(2); V(2:end)]; % 28, 29, 30 Dicembre e 1 Gennaio no
 % ----------------------
 % Acquisizione dati per compartimenti I,R,D
 
-websave('updated_data.csv','https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv');
-Tab = readtable('updated_data.csv','Delimiter', ',');
+%websave('updated_data.csv','https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv');
+Tab = readtable('updated_data_ER_arti.csv','Delimiter', ',');
 
 
 Tab = dati_regioni(Tab,8); % Dati Emilia Romagna
