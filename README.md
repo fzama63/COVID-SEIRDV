@@ -1,2 +1,2 @@
 # COVID-SEIRDV
-Matlab code for article "A switched SEIRDV compartmental model for COVID-19 epidemic analysis in Italy"
+Matlab code for article "Switched forced SEIRDV compartmental models to monitor COVID-19 spread and immunization in Italy"
