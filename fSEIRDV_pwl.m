@@ -16,7 +16,7 @@ S_tot=[];E_tot=[];I_tot=[];R_tot=[];D_tot=[];V_tot=[];
 T_tot=[];
 k=0;
 BETA=[];
-lb=[0;0;0;0;0];
+lb=[0.0001,  0.0001, 0.0001, 0, 1.e-6];% [0;0;0;0;0];
 ub=[1;1;1;1;1];
 while cond_true
     k=k+1;
@@ -48,7 +48,7 @@ while cond_true
     fun_opt=@(P)fun_opt_LSQ_fSEIRDV_pwl(P,beta0,t,Y0,N,I_data,R_data,D_data,V_data,tk1,tk2);
     [par_new,~,~,~,output] =  lsqnonlin(fun_opt,PAR0,lb,ub,options);
     beta=betafun_lin(beta0,par_new(2),t(1),t(end),t);
-    BETA=[BETA(1:end-1); beta];
+    BETA=[BETA(1:end-1) beta];
     
     [t,Sm,Em,Im,Rm,Dm,Vm]=fSEIRDV_pwl_solver(par_new,beta0,t,Y0,N,tk1,tk2);
     beta0=par_new(2);

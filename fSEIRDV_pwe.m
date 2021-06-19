@@ -18,7 +18,7 @@ T_tot=[];
 k=0;
 BETA=[];
 
-lb=[0;0;0;0;0];
+lb=[0.0001,  0.0001, 0.0001, 0, 1.e-6];%[0;0;0;0;0];
 ub=[1;1;1;1;1]; %Perc_var=0.95;
 while cond_true
     k=k+1;
@@ -48,7 +48,7 @@ while cond_true
 %     lb(1:end-1)=par_new(1:end-1)*(1-Perc_var);   
 %     ub(1:end-1)=par_new(1:end-1)*(1+Perc_var);
     beta=betafun_exp(beta0,par_new(2),t(1),t(end),t);
-    BETA=[BETA(1:end-1); beta];
+    BETA=[BETA(1:end-1) beta];
     
     [t,Sm,Em,Im,Rm,Dm,Vm]=fSEIRDV_pwe_solver(par_new,beta0,t,Y0,N,tk1,tk2);
     beta0=par_new(2);
